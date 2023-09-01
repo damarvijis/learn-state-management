@@ -1,5 +1,5 @@
-## Getting Started
-learn state management
+## learn state management
+
 - react context
 - redux
 - zustand
