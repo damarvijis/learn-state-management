@@ -4,7 +4,7 @@ import { UnstatedCounter, UnstatedForm } from "@/stores/unstated";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { RecoilRoot } from "recoil";
-
+import { ProviderLib } from "@/stores/my-lib";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -15,15 +15,17 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ContextLearnProvider>
-        <RecoilRoot>
-          <UnstatedCounter.Provider>
-            <UnstatedForm.Provider>
-              <ReduxProvider>
-                <Component {...pageProps} />
-              </ReduxProvider>
-            </UnstatedForm.Provider>
-          </UnstatedCounter.Provider>
-        </RecoilRoot>
+        <ProviderLib>
+          <RecoilRoot>
+            <UnstatedCounter.Provider>
+              <UnstatedForm.Provider>
+                <ReduxProvider>
+                  <Component {...pageProps} />
+                </ReduxProvider>
+              </UnstatedForm.Provider>
+            </UnstatedCounter.Provider>
+          </RecoilRoot>
+        </ProviderLib>
       </ContextLearnProvider>
     </>
   );
