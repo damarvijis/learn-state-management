@@ -3,6 +3,8 @@ import {
   CounterJotai,
   CounterRecoil,
   CounterRedux,
+  CounterLib,
+  FormLib,
   CounterUnstated,
   CounterZustand,
   FormContext,
@@ -50,6 +52,12 @@ export default function Home() {
         <p>Redux :</p>
         <CounterRedux />
         <FormRedux />
+      </div>
+
+      <div>
+        <p>My Lib :</p>
+        <CounterLib />
+        <FormLib />
       </div>
     </div>
   );
